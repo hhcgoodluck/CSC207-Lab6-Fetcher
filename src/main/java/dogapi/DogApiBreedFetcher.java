@@ -53,10 +53,10 @@ public class DogApiBreedFetcher implements BreedFetcher {
             // 读取响应体 JSON字符串
             String jsonData = response.body().string();
 
-            // 将 JSON 字符串解析为 JSONObject
+            // 将 JSON 字符串 解析为 JSONObject
             JSONObject json = new JSONObject(jsonData);
 
-            // 检查 "status" 字段是否是 "success"
+            // 检查 "status" 字段是否为 "success"
             if (!json.has("status") || !json.getString("status").equals("success")) {
                 throw new BreedNotFoundException("Invalid response for breed: " + breed);
             }
