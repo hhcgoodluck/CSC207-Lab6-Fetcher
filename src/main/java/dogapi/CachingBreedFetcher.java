@@ -30,11 +30,11 @@ public class CachingBreedFetcher implements BreedFetcher {
     }
 
     @Override
-    public List<String> getSubBreeds(String breed) {
+    public List<String> getSubBreeds(String breed) throws BreedNotFoundException {
         // return statement included so that the starter code can compile and run.
         // return new ArrayList<>();
 
-        // 统一转成小写以保证 key 一致性
+        // 转成小写 保证 key 一致性
         String key = breed.toLowerCase();
 
         // 检查缓存
